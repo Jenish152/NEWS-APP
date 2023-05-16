@@ -24,7 +24,7 @@ export default class News extends Component {
   }
   updatenews=async ()=>{
     this.props.setprogress(10);
-    let url=`https://newsapi.org/v2/everything?q=${this.props.category}&from=2022-01-02&sortBy=publishedAt&apiKey=5cdb054255e84e8f9e66e8e6081995af&page=${this.state.page}&pagesize=${this.props.pagesize}`;
+    let url=`https://newsapi.org/v2/everything?q=${this.props.category}&from=2022-05-07&sortBy=publishedAt&apiKey=5cdb054255e84e8f9e66e8e6081995af&page=${this.state.page}&pagesize=${this.props.pagesize}`;
     this.setState({loading:true}); 
     let data=await fetch(url);
     this.props.setprogress(40);
@@ -53,7 +53,7 @@ export default class News extends Component {
   }
   afetchmoredata= async ()=>{
     this.setState({page:this.state.page+1});
-    let url=`https://newsapi.org/v2/everything?q=${this.props.category}&from=2022-01-02&sortBy=publishedAt&apiKey=5cdb054255e84e8f9e66e8e6081995af&page=${this.state.page}&pagesize=${this.props.pagesize}`;
+    let url=`https://newsapi.org/v2/everything?q=${this.props.category}&from=2022-05-07&sortBy=publishedAt&apiKey=5cdb054255e84e8f9e66e8e6081995af&page=${this.state.page}&pagesize=${this.props.pagesize}`;
     this.setState({loading:true}); 
     let data=await fetch(url);
     let parcedata=await data.json();
